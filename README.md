@@ -1,6 +1,9 @@
 # OxnField
 Modified version of Infinite yield https://github.com/EdgeIY/infiniteyield
 
+# Get original infinite yield
+Get it [here](https://github.com/EdgeIY/infiniteyield/wiki)
+
 # Credits
 
 
