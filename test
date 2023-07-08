@@ -17,7 +17,7 @@ local function emularTecla()
     local userInputService = game:GetService("UserInputService")
 
     -- Emular la pulsación de la tecla 'Z'
-    userInputService:AddKeyEvent(Enum.KeyCode.Z, Enum.UserInputType.Keyboard, true)
+    userInputService:AddKeyEvent(Enum.KeyCode.z, Enum.UserInputType.Keyboard, true)
 
     -- Esperar un breve momento antes de liberar la tecla emulada
     wait(0.1)
