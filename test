@@ -1,0 +1,29 @@
+-- Crear una GUI
+local gui = Instance.new("ScreenGui")
+gui.Name = "EmularTeclaGUI"
+gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Crear un botón en la GUI
+local button = Instance.new("TextButton")
+button.Name = "EmularZButton"
+button.Size = UDim2.new(0, 100, 0, 30)
+button.Position = UDim2.new(0.5, -50, 0.5, -15)
+button.Text = "Z"
+button.FontSize = Enum.FontSize.Size18
+button.Parent = gui
+
+-- Función para emular la pulsación de la tecla
+local function emularTecla(inputState, inputObject)
+    if inputState == Enum.UserInputState.Begin then
+        -- Emular la pulsación de la tecla 'Z'
+        local userInputService = game:GetService("UserInputService")
+        userInputService:AddKeyDown(Enum.KeyCode.Z)
+    elseif inputState == Enum.UserInputState.End then
+        -- Liberar la tecla 'Z'
+        local userInputService = game:GetService("UserInputService")
+        userInputService:RemoveKeyDown(Enum.KeyCode.Z)
+    end
+end
+
+-- Registra la función para emular la tecla 'Z' como una acción contextual
+game:GetService("ContextActionService"):BindAction("EmularTeclaZ", emularTecla, false, Enum.KeyCode.Z)
