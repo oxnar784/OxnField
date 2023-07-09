@@ -1,32 +1,13 @@
--- Crear una GUI
-local gui = Instance.new("ScreenGui")
-gui.Name = "EmularTeclaGUI"
-gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+local F = script.Parent:WaitForChild("Frame")
 
--- Crear un botón en la GUI
-local button = Instance.new("TextButton")
-button.Name = "EmularZButton"
-button.Size = UDim2.new(0, 100, 0, 30)
-button.Position = UDim2.new(0.5, -50, 0.5, -15)
-button.Text = "Z"
-button.FontSize = Enum.FontSize.Size18
-button.Parent = gui
-
--- Función para emular la pulsación de la tecla
-local function emularTecla()
-    local userInputService = game:GetService("UserInputService")
-
-    -- Emular la pulsación de la tecla 'Z'
-    userInputService:AddKeyEvent(Enum.KeyCode.z, Enum.UserInputType.Keyboard, true)
-
-    -- Esperar un breve momento antes de liberar la tecla emulada
-    wait(0.1)
-
-    -- Liberar la tecla 'Z'
-    userInputService:AddKeyEvent(Enum.KeyCode.Z, Enum.UserInputType.Keyboard, false)
+function onKeyPress(actionName, userInputState, inputObject)
+ if userInputState == Enum.UserInputState.Begin then
+  print("C was pressed")
+  F.Visible = not F.Visible
+ end
+ 
 end
-
--- Manejar el evento de clic del botón
-button.MouseButton1Click:Connect(function()
-    emularTecla()
-end)
+ 
+game.ContextActionService:BindAction("keyPressSpecialName", onKeyPress, true, Enum.KeyCode.C)
+game.ContextActionService:SetPosition("keyPressSpecialName", UDim2.new(.5,0,-.5,0))
+game.ContextActionService:SetImage("keyPressSpecialName", "rbxassetid://73737626"
