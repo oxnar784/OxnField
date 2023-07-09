@@ -1,13 +1,3 @@
-local F = script.Parent:WaitForChild("Frame")
-
-function onKeyPress(actionName, userInputState, inputObject)
- if userInputState == Enum.UserInputState.Begin then
-  print("C was pressed")
-  F.Visible = not F.Visible
- end
- 
-end
- 
 game.ContextActionService:BindAction("keyPressSpecialName", onKeyPress, true, Enum.KeyCode.C)
 game.ContextActionService:SetPosition("keyPressSpecialName", UDim2.new(.5,0,-.5,0))
-game.ContextActionService:SetImage("keyPressSpecialName", "rbxassetid://73737626"
+game.ContextActionService:SetImage("keyPressSpecialName", "rbxassetid://73737626")
