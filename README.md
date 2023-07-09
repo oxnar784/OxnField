@@ -21,4 +21,6 @@ Get it [here](https://github.com/EdgeIY/infiniteyield/wiki)
 
 - ### Added Mobile fly = Mfly
 - ### Added private mmesage logger = spychat
+- ### Added keybind script = keybind
+- ### Added a better fling gui = yeet
 
